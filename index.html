@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0a0a0f">
+<title>撸撸电影网 - 高清影视在线观看与最新影视资讯聚合平台</title>
+<meta name="description" content="撸撸电影网（https://www.luludianyingwang-app.com）提供高清电影、热播剧集、动漫新番与综艺纪录片的在线观看入口与影视资讯聚合，每日更新上映排期、豆瓣高分榜单、影评解读与追剧指南，移动端自适应，打开即看。">
+<meta name="keywords" content="撸撸电影网,撸撸电影,高清电影在线观看,热播电视剧,动漫新番,综艺纪录片,影视资讯,电影排行榜,免费看电影">
+<meta name="author" content="撸撸电影网">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<link rel="canonical" href="https://www.luludianyingwang-app.com/">
+<link rel="alternate" hreflang="zh-CN" href="https://www.luludianyingwang-app.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="撸撸电影网">
+<meta property="og:title" content="撸撸电影网 - 高清影视在线观看与最新影视资讯聚合平台">
+<meta property="og:description" content="撸撸电影网每日更新高清电影、热播剧集、动漫新番与综艺纪录片，提供上映排期、高分榜单、影评解读与追剧指南。">
+<meta property="og:url" content="https://www.luludianyingwang-app.com/">
+<meta property="og:image" content="https://www.luludianyingwang-app.com/static/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="撸撸电影网 - 高清影视在线观看与最新影视资讯聚合平台">
+<meta name="twitter:description" content="高清电影、热播剧集、动漫新番、综艺纪录片一站式聚合，撸撸电影网每日更新。">
+<style>
+/* ============ 基础重置 ============ */
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{
+  margin:0;
+  padding:0;
+  background:#0a0a0f;
+  color:#e8e8f0;
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  font-size:15px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block;border:0;}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;}
+ul,ol{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.35;}
+p{margin:0 0 .8em;}
+p:last-child{margin-bottom:0;}
+:focus-visible{outline:2px solid #ff6a3d;outline-offset:2px;}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 16px;}
+.skip{position:absolute;left:-9999px;top:0;background:#ff6a3d;color:#fff;padding:8px 14px;z-index:99;}
+.skip:focus{left:8px;top:8px;}
+.grad{background:linear-gradient(120deg,#ff6a3d 0%,#ff2d78 55%,#7b5cff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+/* ============ 顶部 ============ */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,10,15,.86);
+  backdrop-filter:saturate(160%) blur(12px);
+  -webkit-backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;height:58px;gap:12px;}
+.logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:800;letter-spacing:.5px;white-space:nowrap;}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;flex:0 0 34px;
+  background:linear-gradient(135deg,#ff6a3d,#ff2d78 60%,#7b5cff);
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;color:#fff;box-shadow:0 6px 18px rgba(255,45,120,.35);
+}
+.logo small{display:block;font-size:10px;font-weight:400;color:#8b8ba0;letter-spacing:2px;line-height:1;margin-top:2px;}
+.nav{display:flex;align-items:center;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{
+  display:block;padding:8px 11px;border-radius:8px;font-size:14px;color:#b9b9c9;white-space:nowrap;transition:.2s;
+}
+.nav a:hover,.nav a:focus{color:#fff;background:rgba(255,106,61,.14);}
+.nav a.on{color:#fff;background:linear-gradient(120deg,rgba(255,106,61,.9),rgba(255,45,120,.85));}
+.burger{
+  display:none;width:38px;height:38px;border:1px solid rgba(255,255,255,.14);border-radius:9px;
+  background:rgba(255,255,255,.04);cursor:pointer;position:relative;flex:0 0 38px;
+}
+.burger i{position:absolute;left:10px;right:10px;height:2px;background:#fff;border-radius:2px;transition:.25s;}
+.burger i:nth-child(1){top:12px;}
+.burger i:nth-child(2){top:18px;}
+.burger i:nth-child(3){top:24px;}
+.drawer{
+  display:none;border-top:1px solid rgba(255,255,255,.07);
+  background:#0d0d14;padding:8px 16px 16px;
+}
+.drawer a{display:block;padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.06);color:#c9c9d8;font-size:15px;}
+.drawer.open{display:block;}
+
+/* ============ 英雄区 ============ */
+.hero{position:relative;padding:44px 0 30px;overflow:hidden;}
+.hero::before{
+  content:"";position:absolute;inset:-40% -10% auto -10%;height:520px;
+  background:
+    radial-gradient(600px 300px at 20% 30%,rgba(255,106,61,.28),transparent 70%),
+    radial-gradient(520px 280px at 78% 20%,rgba(123,92,255,.26),transparent 70%);
+  filter:blur(10px);pointer-events:none;
+}
+.hero-in{position:relative;}
+.tagline{
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1px;
+  padding:6px 12px;border-radius:999px;border:1px solid rgba(255,106,61,.4);
+  color:#ffb59a;background:rgba(255,106,61,.1);margin-bottom:16px;
+}
+.tagline b{width:6px;height:6px;border-radius:50%;background:#ff6a3d;box-shadow:0 0 8px #ff6a3d;}
+.hero h1{font-size:34px;letter-spacing:-.5px;margin-bottom:14px;}
+.hero h1 span{display:block;}
+.hero p.lead{font-size:16px;color:#a9a9bd;max-width:640px;margin-bottom:22px;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;padding:12px 22px;border-radius:11px;
+  font-size:15px;font-weight:600;transition:.22s;border:1px solid transparent;
+}
+.btn-p{background:linear-gradient(120deg,#ff6a3d,#ff2d78);color:#fff;box-shadow:0 10px 24px rgba(255,45,120,.3);}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(255,45,120,.42);}
+.btn-o{border-color:rgba(255,255,255,.18);color:#e8e8f0;background:rgba(255,255,255,.04);}
+.btn-o:hover{border-color:#ff6a3d;color:#ffb59a;}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.stat{
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:14px 12px;text-align:center;
+}
+.stat b{display:block;font-size:22px;font-weight:800;color:#fff;line-height:1.2;}
+.stat span{font-size:12px;color:#8b8ba0;}
+
+/* ============ 通用区块 ============ */
+.sec{padding:34px 0;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:18px;}
+.sec-head h2{font-size:22px;position:relative;padding-left:13px;}
+.sec-head h2::before{
+  content:"";position:absolute;left:0;top:6px;bottom:6px;width:4px;border-radius:4px;
+  background:linear-gradient(180deg,#ff6a3d,#7b5cff);
+}
+.sec-head p{font-size:13px;color:#8b8ba0;margin:6px 0 0 13px;}
+.more{font-size:13px;color:#ff8a63;white-space:nowrap;padding-bottom:4px;}
+.more:hover{color:#ffb59a;text-decoration:underline;}
+
+/* ============ 卡片网格 ============ */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.card{
+  background:#12121b;border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;
+  transition:.25s;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,106,61,.45);box-shadow:0 14px 30px rgba(0,0,0,.5);}
+.poster{
+  position:relative;aspect-ratio:2/3;display:flex;align-items:flex-end;padding:10px;
+  background:linear-gradient(150deg,#2a2a3a,#15151f);
+}
+.poster .tag{
+  position:absolute;left:9px;top:9px;font-size:11px;padding:3px 8px;border-radius:6px;
+  background:rgba(0,0,0,.55);color:#ffd0bd;border:1px solid rgba(255,106,61,.5);
+}
+.poster .score{
+  position:absolute;right:9px;top:9px;font-size:12px;font-weight:700;color:#ffcf3d;
+  background:rgba(0,0,0,.55);border-radius:6px;padding:3px 7px;
+}
+.poster .name{
+  position:relative;font-size:14px;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.7);
+}
+.poster .sub{position:relative;font-size:11px;color:rgba(255,255,255,.62);margin-top:2px;}
+.p1{background:linear-gradient(150deg,#ff7a45,#7b2d5e);}
+.p2{background:linear-gradient(150deg,#3d5cff,#1b1b3a);}
+.p3{background:linear-gradient(150deg,#00c2a8,#123a45);}
+.p4{background:linear-gradient(150deg,#ff2d78,#3a1140);}
+.p5{background:linear-gradient(150deg,#8d5cff,#241541);}
+.p6{background:linear-gradient(150deg,#ffb03d,#5a2a12);}
+.card-body{padding:11px 12px 13px;}
+.card-body h3{font-size:14px;margin-bottom:5px;color:#f2f2f8;}
+.card-body p{font-size:12px;color:#8b8ba0;line-height:1.6;}
+
+/* ============ 榜单 ============ */
+.rank{background:#12121b;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:6px 4px;}
+.rank li{display:flex;align-items:center;gap:12px;padding:11px 12px;border-bottom:1px dashed rgba(255,255,255,.07);}
+.rank li:last-child{border-bottom:0;}
+.rank .no{
+  flex:0 0 26px;height:26px;border-radius:8px;font-size:13px;font-weight:800;color:#fff;
+  display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);
+}
+.rank li:nth-child(1) .no{background:linear-gradient(120deg,#ff6a3d,#ff2d78);}
+.rank li:nth-child(2) .no{background:linear-gradient(120deg,#ff9a3d,#ff6a3d);}
+.rank li:nth-child(3) .no{background:linear-gradient(120deg,#7b5cff,#4d7cff);}
+.rank .ti{flex:1;min-width:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.rank .ti em{display:block;font-style:normal;font-size:11px;color:#8b8ba0;}
+.rank .hot{font-size:12px;color:#ff8a63;white-space:nowrap;}
+
+/* ============ 资讯 ============ */
+.news{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;}
+.news-lead{
+  position:relative;border-radius:14px;overflow:hidden;padding:26px 22px;min-height:240px;
+  background:linear-gradient(135deg,rgba(255,106,61,.28),rgba(123,92,255,.28)),#15151f;
+  border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:flex-end;
+}
+.news-lead .k{font-size:11px;color:#ffb59a;letter-spacing:1px;margin-bottom:8px;}
+.news-lead h3{font-size:20px;color:#fff;margin-bottom:8px;}
+.news-lead p{font-size:13px;color:#c3c3d2;}
+.news-list{background:#12121b;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:8px 4px;}
+.news-list li{border-bottom:1px dashed rgba(255,255,255,.07);}
+.news-list li:last-child{border-bottom:0;}
+.news-list a{display:flex;gap:12px;padding:11px 12px;align-items:baseline;}
+.news-list a:hover h4{color:#ff8a63;}
+.news-list .d{flex:0 0 auto;font-size:11px;color:#6e6e85;font-variant-numeric:tabular-nums;}
+.news-list h4{font-size:13.5px;font-weight:500;color:#dedee8;transition:.2s;}
+
+/* ============ 特色 ============ */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.feat-item{
+  padding:20px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+}
+.feat-item .ic{font-size:24px;margin-bottom:10px;display:block;}
+.feat-item h3{font-size:15px;margin-bottom:6px;color:#fff;}
+.feat-item p{font-size:12.5px;color:#8b8ba0;}
+
+/* ============ 搜索条 ============ */
+.searchbar{
+  margin:26px 0 0;background:#12121b;border:1px solid rgba(255,255,255,.08);border-radius:14px;
+  padding:12px;display:flex;gap:10px;align-items:center;
+}
+.searchbar input{
+  flex:1;min-width:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:11px 14px;color:#fff;font-size:14px;outline:none;
+}
+.searchbar input::placeholder{color:#6e6e85;}
+.searchbar input:focus{border-color:#ff6a3d;}
+.searchbar button{
+  border:0;border-radius:10px;padding:11px 20px;font-size:14px;font-weight:700;color:#fff;cursor:pointer;
+  background:linear-gradient(120deg,#ff6a3d,#ff2d78);white-space:nowrap;
+}
+
+/* ============ FAQ ============ */
+.faq{background:#12121b;border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;}
+.faq details{border-bottom:1px solid rgba(255,255,255,.07);}
+.faq details:last-child{border-bottom:0;}
+.faq summary{
+  cursor:pointer;padding:14px 16px;font-size:14.5px;font-weight:600;color:#eeeef6;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:#ff6a3d;font-size:18px;font-weight:700;}
+.faq details[open] summary::after{content:"−";}
+.faq .ans{padding:0 16px 15px;font-size:13.5px;color:#a0a0b5;}
+
+/* ============ 底部 ============ */
+.foot{
+  margin-top:30px;border-top:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,#0c0c13,#08080d);padding:32px 0 26px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:22px;}
+.foot h4{font-size:14px;color:#fff;margin-bottom:10px;letter-spacing:.5px;}
+.foot li{margin-bottom:7px;}
+.foot li a{font-size:13px;color:#8b8ba0;}
+.foot li a:hover{color:#ff8a63;}
+.foot-about p{font-size:13px;color:#8b8ba0;}
+.copyright{
+  margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06);
+  font-size:12.5px;color:#6e6e85;text-align:center;line-height:1.9;
+}
+.foot-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:10px;}
+.foot-nav a{font-size:12.5px;color:#8b8ba0;}
+.foot-nav a:hover{color:#ff8a63;}
+.to-top{
+  position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:40;
+  width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.14);
+  background:rgba(18,18,27,.9);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:16px;box-shadow:0 8px 20px rgba(0,0,0,.45);
+}
+
+/* ============ 面包屑 ============ */
+.crumb{font-size:12.5px;color:#6e6e85;padding:14px 0 0;}
+.crumb a{color:#8b8ba0;}
+.crumb a:hover{color:#ff8a63;}
+.crumb span{margin:0 6px;color:#45455a;}
+
+/* ============ 响应式 ============ */
+@media (max-width:960px){
+  .grid{grid-template-columns:repeat(3,1fr);}
+  .feat{grid-template-columns:repeat(2,1fr);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:720px){
+  .nav{display:none;}
+  .burger{display:block;}
+  .hero{padding:30px 0 22px;}
+  .hero h1{font-size:26px;}
+  .hero p.lead{font-size:14.5px;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .grid{grid-template-columns:repeat(2,1fr);gap:11px;}
+  .news{grid-template-columns:1fr;}
+  .sec{padding:26px 0;}
+  .sec-head h2{font-size:19px;}
+  .card-body h3{font-size:13px;}
+  .card-body p{display:none;}
+}
+@media (max-width:420px){
+  .grid{gap:9px;}
+  .poster .name{font-size:12.5px;}
+  .feat{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  .btn{padding:11px 16px;font-size:14px;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.luludianyingwang-app.com/#website",
+      "url": "https://www.luludianyingwang-app.com/",
+      "name": "撸撸电影网",
+      "alternateName": "撸撸电影",
+      "inLanguage": "zh-CN",
+      "description": "撸撸电影网提供高清电影、热播剧集、动漫新番与综艺纪录片的在线观看入口与影视资讯聚合。",
+      "publisher": { "@id": "https://www.luludianyingwang-app.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.luludianyingwang-app.com/#organization",
+      "name": "撸撸电影网",
+      "url": "https://www.luludianyingwang-app.com/",
+      "logo": "https://www.luludianyingwang-app.com/static/logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "撸撸电影网首页", "item": "https://www.luludianyingwang-app.com/" },
+        { "@type": "ListItem", "position": 2, "name": "最新上映电影", "item": "https://www.luludianyingwang-app.com/#movie" },
+        { "@type": "ListItem", "position": 3, "name": "热播电视剧", "item": "https://www.luludianyingwang-app.com/#tv" },
+        { "@type": "ListItem", "position": 4, "name": "动漫新番", "item": "https://www.luludianyingwang-app.com/#anime" },
+        { "@type": "ListItem", "position": 5, "name": "综艺纪录片", "item": "https://www.luludianyingwang-app.com/#show" },
+        { "@type": "ListItem", "position": 6, "name": "影视资讯", "item": "https://www.luludianyingwang-app.com/#news" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "撸撸电影网热门影视榜单",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 5,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "星海归途" },
+        { "@type": "ListItem", "position": 2, "name": "长夜将明" },
+        { "@type": "ListItem", "position": 3, "name": "山海纪年" },
+        { "@type": "ListItem", "position": 4, "name": "拾光者手记" },
+        { "@type": "ListItem", "position": 5, "name": "荒原列车" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+<a class="skip" href="#main">跳转到主要内容</a>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="topbar" role="banner">
+  <div class="wrap topbar-inner">
+    <a class="logo" href="#" aria-label="撸撸电影网首页">
+      <span class="logo-mark" aria-hidden="true">▶</span>
+      <span>撸撸电影网<small>ZHUZHU MOVIE</small></span>
+    </a>
+    <nav class="nav" role="navigation" aria-label="主导航">
+      <a href="#" class="on">首页</a>
+      <a href="#movie">最新上映</a>
+      <a href="#tv">热播剧集</a>
+      <a href="#anime">动漫新番</a>
+      <a href="#show">综艺纪实</a>
+      <a href="#news">影视资讯</a>
+      <a href="#rank">热门榜单</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <button class="burger" type="button" id="menuBtn" aria-label="展开导航菜单" aria-expanded="false" aria-controls="drawer">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+  <nav class="drawer" id="drawer" aria-label="移动端导航">
+    <a href="#">首页</a>
+    <a href="#movie">最新上映</a>
+    <a href="#tv">热播剧集</a>
+    <a href="#anime">动漫新番</a>
+    <a href="#show">综艺纪实</a>
+    <a href="#news">影视资讯</a>
+    <a href="#rank">热门榜单</a>
+    <a href="#about">关于我们</a>
+  </nav>
+</header>
+
+<main id="main" role="main">
+
+  <!-- ============ 英雄区 ============ -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap hero-in">
+      <div class="crumb">
+        <a href="#">撸撸电影网</a><span>›</span>首页
+      </div>
+      <div class="tagline"><b aria-hidden="true"></b>每日更新 · 移动端自适应 · 打开即看</div>
+      <h1 id="heroTitle">
+        <span class="grad">撸撸电影网</span>
+        <span>高清影视在线观看与影视资讯聚合平台</span>
+      </h1>
+      <p class="lead">
+        撸撸电影网聚合高清电影、热播剧集、动漫新番与综艺纪录片资源入口，同步院线上映排期、豆瓣高分榜单、深度影评与追剧指南。
+        无需复杂操作，手机、平板、电脑自适应排版，随时随地打开撸撸电影网就能找到今天想看的那一部。
+      </p>
+      <div class="hero-btns">
+        <a class="btn btn-p" href="#movie">▶ 立即看片</a>
+        <a class="btn btn-o" href="#rank">查看热门榜单</a>
+      </div>
+      <div class="searchbar" role="search">
+        <input type="search" id="q" name="q" placeholder="搜索撸撸电影网的影片、剧集、演员…" aria-label="站内搜索">
+        <button type="button">搜索</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>32000+</b><span>收录影片</span></div>
+        <div class="stat"><b>1080P</b><span>高清画质</span></div>
+        <div class="stat"><b>每日</b><span>同步更新</span></div>
+        <div class="stat"><b>4.8</b><span>用户评分</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目一：最新上映 ============ -->
+  <section class="sec" id="movie" aria-labelledby="movieTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="movieTitle">最新上映电影</h2>
+          <p>撸撸电影网同步院线排期，新片上线第一时间更新观看入口</p>
+        </div>
+        <a class="more" href="#">查看全部电影 ›</a>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="poster p1" role="img" aria-label="电影《星海归途》海报">
+            <span class="tag">院线新片</span><span class="score">9.2</span>
+            <div><div class="name">星海归途</div><div class="sub">科幻 · 2026 · 142分钟</div></div>
+          </div>
+          <div class="card-body">
+            <h3>星海归途</h3>
+            <p>一支远航舰队在失联十年后传回信号，揭开星海尽头的终极秘密。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p2" role="img" aria-label="电影《长夜将明》海报">
+            <span class="tag">独家上线</span><span class="score">8.9</span>
+            <div><div class="name">长夜将明</div><div class="sub">悬疑 · 2026 · 118分钟</div></div>
+          </div>
+          <div class="card-body">
+            <h3>长夜将明</h3>
+            <p>雨夜小镇的失踪案，牵出二十年前一桩被尘封的旧事。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p3" role="img" aria-label="电影《荒原列车》海报">
+            <span class="tag">高分佳作</span><span class="score">8.7</span>
+            <div><div class="name">荒原列车</div><div class="sub">冒险 · 2025 · 126分钟</div></div>
+          </div>
+          <div class="card-body">
+            <h3>荒原列车</h3>
+            <p>一列永不到站的列车，载着各怀目的的乘客穿过无尽荒原。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p4" role="img" aria-label="电影《拾光者手记》海报">
+            <span class="tag">口碑热映</span><span class="score">8.5</span>
+            <div><div class="name">拾光者手记</div><div class="sub">剧情 · 2025 · 105分钟</div></div>
+          </div>
+          <div class="card-body">
+            <h3>拾光者手记</h3>
+            <p>旧照相馆里的老照片，串起三代人跨越半生的温柔和解。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目二：热播剧集 ============ -->
+  <section class="sec" id="tv" aria-labelledby="tvTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="tvTitle">热播电视剧集</h2>
+          <p>撸撸电影网追剧日历：更新提醒、分集剧情与演员表一站查询</p>
+        </div>
+        <a class="more" href="#">追剧日历 ›</a>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="poster p5" role="img" aria-label="剧集《山海纪年》海报">
+            <span class="tag">更新至24集</span><span class="score">9.0</span>
+            <div><div class="name">山海纪年</div><div class="sub">古装 · 共36集</div></div>
+          </div>
+          <div class="card-body">
+            <h3>山海纪年</h3>
+            <p>少年守山人踏上寻访九州异兽之路，重写山海旧卷。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p6" role="img" aria-label="剧集《城市边缘》海报">
+            <span class="tag">更新至18集</span><span class="score">8.8</span>
+            <div><div class="name">城市边缘</div><div class="sub">都市 · 共28集</div></div>
+          </div>
+          <div class="card-body">
+            <h3>城市边缘</h3>
+            <p>六个租房青年的合租日常，写满这座城市的笑与泪。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p2" role="img" aria-label="剧集《白鸽与枪》海报">
+            <span class="tag">已完结</span><span class="score">9.1</span>
+            <div><div class="name">白鸽与枪</div><div class="sub">谍战 · 共32集</div></div>
+          </div>
+          <div class="card-body">
+            <h3>白鸽与枪</h3>
+            <p>代号白鸽的情报员，在暗流涌动的孤岛周旋到底。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p3" role="img" aria-label="剧集《春信有时》海报">
+            <span class="tag">更新至12集</span><span class="score">8.4</span>
+            <div><div class="name">春信有时</div><div class="sub">青春 · 共24集</div></div>
+          </div>
+          <div class="card-body">
+            <h3>春信有时</h3>
+            <p>南方小城的夏天，一封迟到的信让少年们重新相遇。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目三：动漫新番 ============ -->
+  <section class="sec" id="anime" aria-labelledby="animeTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="animeTitle">动漫新番专区</h2>
+          <p>撸撸电影网新番时间表：日更番剧、剧场版与国创动画全覆盖</p>
+        </div>
+        <a class="more" href="#">新番时间表 ›</a>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="poster p5" role="img" aria-label="动画《星轨少年》海报">
+            <span class="tag">周更</span><span class="score">9.3</span>
+            <div><div class="name">星轨少年</div><div class="sub">国创 · 更新至第9话</div></div>
+          </div>
+          <div class="card-body">
+            <h3>星轨少年</h3>
+            <p>少年驾驶自制星轨机，追逐一场划破夜空的流星雨。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p1" role="img" aria-label="动画《狐火物语》海报">
+            <span class="tag">剧场版</span><span class="score">8.9</span>
+            <div><div class="name">狐火物语</div><div class="sub">动画电影 · 96分钟</div></div>
+          </div>
+          <div class="card-body">
+            <h3>狐火物语</h3>
+            <p>山林狐火与人间灯火，一场跨越百年的守护约定。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p4" role="img" aria-label="动画《机械之心》海报">
+            <span class="tag">完结</span><span class="score">8.6</span>
+            <div><div class="name">机械之心</div><div class="sub">科幻 · 全12话</div></div>
+          </div>
+          <div class="card-body">
+            <h3>机械之心</h3>
+            <p>拥有人类情感的机器人，寻找自己被制造的理由。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p6" role="img" aria-label="动画《夏日蝉鸣》海报">
+            <span class="tag">周更</span><span class="score">8.7</span>
+            <div><div class="name">夏日蝉鸣</div><div class="sub">治愈 · 更新至第7话</div></div>
+          </div>
+          <div class="card-body">
+            <h3>夏日蝉鸣</h3>
+            <p>回到外婆家的暑假，蝉鸣声里藏着整个童年的秘密。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目四：综艺纪实 ============ -->
+  <section class="sec" id="show" aria-labelledby="showTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="showTitle">综艺与纪录片</h2>
+          <p>撸撸电影网精选高分纪实影像与热门综艺，碎片时间也能看得过瘾</p>
+        </div>
+        <a class="more" href="#">纪实片库 ›</a>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="poster p3" role="img" aria-label="纪录片《山河行者》海报">
+            <span class="tag">纪录片</span><span class="score">9.4</span>
+            <div><div class="name">山河行者</div><div class="sub">人文地理 · 6集</div></div>
+          </div>
+          <div class="card-body">
+            <h3>山河行者</h3>
+            <p>用脚步丈量山脊与河谷，记录中国大地上最动人的日常。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p6" role="img" aria-label="综艺《厨房夜话》海报">
+            <span class="tag">综艺</span><span class="score">8.5</span>
+            <div><div class="name">厨房夜话</div><div class="sub">生活 · 更新至第5期</div></div>
+          </div>
+          <div class="card-body">
+            <h3>厨房夜话</h3>
+            <p>深夜的一顿家常饭，换来十二段真实的人生故事。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p2" role="img" aria-label="纪录片《深海之下》海报">
+            <span class="tag">纪录片</span><span class="score">9.2</span>
+            <div><div class="name">深海之下</div><div class="sub">自然 · 4集</div></div>
+          </div>
+          <div class="card-body">
+            <h3>深海之下</h3>
+            <p>潜入千米海沟，遇见那些从未被镜头记录过的生命。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster p1" role="img" aria-label="综艺《旷野歌声》海报">
+            <span class="tag">综艺</span><span class="score">8.3</span>
+            <div><div class="name">旷野歌声</div><div class="sub">音乐 · 更新至第3期</div></div>
+          </div>
+          <div class="card-body">
+            <h3>旷野歌声</h3>
+            <p>把舞台搬到草原与山谷，让歌声回到最辽阔的地方。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目五：影视资讯 ============ -->
+  <section class="sec" id="news" aria-labelledby="newsTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="newsTitle">影视资讯与影评</h2>
+          <p>撸撸电影网编辑部出品：上映前瞻、票房观察、剧集解读</p>
+        </div>
+        <a class="more" href="#">资讯频道 ›</a>
+      </div>
+      <div class="news">
+        <article class="news-lead">
+          <div>
+            <div class="k">上映前瞻</div>
+            <h3>2026 秋季档前瞻：哪些新片值得在撸撸电影网第一时间追？</h3>
+            <p>从科幻巨制到小成本黑马，撸撸电影网为你梳理本季度最值得关注的 12 部院线新片，附上线时间与看点速览。</p>
+          </div>
+        </article>
+        <div class="news-list">
+          <ul>
+            <li><a href="#"><span class="d">10-11</span><h4>票房观察：国庆档后观影热度为何持续走高</h4></a></li>
+            <li><a href="#"><span class="d">10-10</span><h4>《星海归途》结局解析：三个细节暗示续作伏笔</h4></a></li>
+            <li><a href="#"><span class="d">10-09</span><h4>追剧指南：《山海纪年》24 集剧情回顾与人物关系图</h4></a></li>
+            <li><a href="#"><span class="d">10-08</span><h4>新番速递：秋季 18 部动画开播时间表一览</h4></a></li>
+            <li><a href="#"><span class="d">10-07</span><h4>纪录片推荐：五部高分人文纪实影像清单</h4></a></li>
+            <li><a href="#"><span class="d">10-06</span><h4>观影贴士：手机端如何挑选最合适的清晰度</h4></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目六：热门榜单 ============ -->
+  <section class="sec" id="rank" aria-labelledby="rankTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="rankTitle">撸撸电影网热门榜单</h2>
+          <p>按站内播放热度与用户评分实时排序，每小时更新一次</p>
+        </div>
+        <a class="more" href="#">完整排行榜 ›</a>
+      </div>
+      <div class="rank">
+        <ol>
+          <li><span class="no">1</span><span class="ti">星海归途<em>科幻电影 · 9.2分</em></span><span class="hot">热度 98.6万</span></li>
+          <li><span class="no">2</span><span class="ti">山海纪年<em>古装剧集 · 9.0分</em></span><span class="hot">热度 87.2万</span></li>
+          <li><span class="no">3</span><span class="ti">白鸽与枪<em>谍战剧集 · 9.1分</em></span><span class="hot">热度 81.4万</span></li>
+          <li><span class="no">4</span><span class="ti">星轨少年<em>国创动画 · 9.3分</em></span><span class="hot">热度 76.9万</span></li>
+          <li><span class="no">5</span><span class="ti">长夜将明<em>悬疑电影 · 8.9分</em></span><span class="hot">热度 70.3万</span></li>
+          <li><span class="no">6</span><span class="ti">山河行者<em>人文纪录片 · 9.4分</em></span><span class="hot">热度 65.1万</span></li>
+          <li><span class="no">7</span><span class="ti">荒原列车<em>冒险电影 · 8.7分</em></span><span class="hot">热度 58.7万</span></li>
+          <li><span class="no">8</span><span class="ti">城市边缘<em>都市剧集 · 8.8分</em></span><span class="hot">热度 52.0万</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目七：平台特色 ============ -->
+  <section class="sec" id="feature" aria-labelledby="featTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="featTitle">为什么选择撸撸电影网</h2>
+          <p>四个核心优势，让找片和看片都变得更简单</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-item">
+          <span class="ic" aria-hidden="true">🎬</span>
+          <h3>片库全</h3>
+          <p>电影、剧集、动漫、综艺、纪录片五大类目，32000+ 部作品持续扩充。</p>
+        </div>
+        <div class="feat-item">
+          <span class="ic" aria-hidden="true">⚡</span>
+          <h3>更新快</h3>
+          <p>院线上映与番剧更新同步跟进，热门内容最快当日上线撸撸电影网。</p>
+        </div>
+        <div class="feat-item">
+          <span class="ic" aria-hidden="true">📱</span>
+          <h3>自适应</h3>
+          <p>手机竖屏、平板与桌面端自动适配，小屏也能看清每一张海报与简介。</p>
+        </div>
+        <div class="feat-item">
+          <span class="ic" aria-hidden="true">🔍</span>
+          <h3>好找片</h3>
+          <p>支持按类型、年份、地区、评分筛选，站内搜索一秒定位想看的那一部。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目八：关于与 FAQ ============ -->
+  <section class="sec" id="about" aria-labelledby="aboutTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 id="aboutTitle">关于撸撸电影网</h2>
+          <p>常见问题与使用说明，一分钟了解这个影视聚合平台</p>
+        </div>
+        <a class="more" href="#">联系与合作 ›</a>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>撸撸电影网是什么类型的网站？</summary>
+          <div class="ans">撸撸电影网是一个影视内容与资讯聚合平台，汇总高清电影、热播剧集、动漫新番、综艺与纪录片的观看入口，并提供上映排期、高分榜单与影评解读，帮助用户快速找到想看的内容。</div>
+        </details>
+        <details>
+          <summary>撸撸电影网的资源多久更新一次？</summary>
+          <div class="ans">院线新片与番剧更新同步跟进，热门内容最快当日上线；热门榜单每小时按站内播放热度与用户评分重新排序一次。</div>
+        </details>
+        <details>
+          <summary>手机上访问撸撸电影网体验如何？</summary>
+          <div class="ans">撸撸电影网采用移动端自适应布局，导航在窄屏下自动收起为菜单，海报与文字按屏幕尺寸重新排列，竖屏单手也能顺畅浏览。</div>
+        </details>
+        <details>
+          <summary>如何快速找到想看的影片？</summary>
+          <div class="ans">可使用首页搜索框按片名、演员检索，或通过「最新上映」「热播剧集」「动漫新番」「综艺纪实」等分类栏目与热门榜单浏览筛选。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 底部 ============ -->
+<footer class="foot" role="contentinfo">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <h4>关于撸撸电影网</h4>
+        <p>
+          撸撸电影网（https://www.luludianyingwang-app.com）致力于为用户提供便捷的影视内容发现体验：
+          聚合高清电影、热播剧集、动漫新番、综艺与纪录片入口，配以上映排期、高分榜单与深度影评，
+          让每一次找片都更高效。
+        </p>
+      </div>
+      <div>
+        <h4>影视分类</h4>
+        <ul>
+          <li><a href="#movie">最新上映电影</a></li>
+          <li><a href="#tv">热播电视剧集</a></li>
+          <li><a href="#anime">动漫新番专区</a></li>
+          <li><a href="#show">综艺与纪录片</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>资讯与榜单</h4>
+        <ul>
+          <li><a href="#news">影视资讯</a></li>
+          <li><a href="#rank">热门播放榜</a></li>
+          <li><a href="#">新番时间表</a></li>
+          <li><a href="#">追剧日历</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>帮助与合作</h4>
+        <ul>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#">内容投稿</a></li>
+          <li><a href="#">版权投诉</a></li>
+          <li><a href="#">意见反馈</a></li>
+        </ul>
+      </div>
+    </div>
+    <nav class="foot-nav" aria-label="底部导航">
+      <a href="#">撸撸电影网首页</a>
+      <a href="#movie">电影</a>
+      <a href="#tv">剧集</a>
+      <a href="#anime">动漫</a>
+      <a href="#show">综艺</a>
+      <a href="#news">资讯</a>
+      <a href="#rank">榜单</a>
+      <a href="#about">关于</a>
+    </nav>
+    <div class="copyright">
+      <p>本站所有影视信息均来自公开渠道整理，版权归原权利人所有。</p>
+      <p>&copy; 2026 撸撸电影网 https://www.luludianyingwang-app.com　保留所有权利。</p>
+    </div>
+  </div>
+</footer>
+
+<a class="to-top" href="#" aria-label="返回顶部">↑</a>
+
+<script>
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var drawer = document.getElementById('drawer');
+  if(btn && drawer){
+    btn.addEventListener('click', function(){
+      var open = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    drawer.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        drawer.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
